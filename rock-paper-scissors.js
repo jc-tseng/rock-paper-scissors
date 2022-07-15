@@ -1,6 +1,6 @@
 //Array of choices (rock, paper, scissor)
 var choices = [
-    "rock", "paper", "scissor"
+    "ROCK", "PAPER", "SCISSOR"
 ];
 
 //Create computerPlay() function
@@ -13,8 +13,8 @@ function computerPlay() {
 //    takes input from user (prompt)
 //    returns that input in all lowercase
 function playerPlay() {
-    let player = prompt("Enter rock, paper, or scissor.");
-    return player.toLowerCase();
+    let player = prompt("Enter ROCK, PAPER, or SCISSOR.");
+    return player.toUpperCase();
 }
 
 //Create playRound() function - takes 2 parameters (playerSelection, computerselection)
@@ -29,8 +29,8 @@ function playRound(playerSelection, computerSelection) {
 //            return "You lose"
 //        else
 //            return "You win"
-    } else if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
+    } else if (playerSelection === "ROCK") {
+        if (computerSelection === "PAPER") {
             return `You lose. ${computerSelection} beats ${playerSelection}.`
         } else {
             return `You win. ${playerSelection} beats ${computerSelection}.`
@@ -41,8 +41,8 @@ function playRound(playerSelection, computerSelection) {
 //            return "You win"
 //        else
 //            return "You lose"
-    } else if (playerSelection === "paper") {
-        if (computerSelection === "rock") {
+    } else if (playerSelection === "PAPER") {
+        if (computerSelection === "ROCK") {
             return `You win. ${playerSelection} beats ${computerSelection}.`
         } else {
             return `You lose. ${computerSelection} beats ${playerSelection}.`
@@ -53,8 +53,8 @@ function playRound(playerSelection, computerSelection) {
 //            return "You win"
 //        else
 //            return "You lose"
-    } else if (playerSelection === "scissor") {
-        if (computerSelection === "paper") {
+    } else if (playerSelection === "SCISSOR") {
+        if (computerSelection === "PAPER") {
             return `You win. ${playerSelection} beats ${computerSelection}.`
         } else {
             return `You lose. ${computerSelection} beats ${playerSelection}.`
@@ -67,11 +67,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerSelection = playerPlay();
-let computerSelection = computerPlay();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
-
 //Create Game() function
-//    for loop 5 times
+//    for loop - iterate 5 times
 //       playRound()
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = playerPlay();
+        let computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
