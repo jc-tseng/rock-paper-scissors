@@ -86,7 +86,7 @@ function game() {
     if (playerScore > computerScore) {
         console.log(`Congrats, you won the game! Your score - ${playerScore} | Computer's score - ${computerScore}`)
     } else if (playerScore < computerScore) {
-        console.log(`Sorry, you lose the game. Your score - ${playerScore} | Computer's score - ${computerScore}`)
+        console.log(`Sorry, you lost the game. Your score - ${playerScore} | Computer's score - ${computerScore}`)
     } else {
         console.log(`Tie game! Your score - ${playerScore} | Computer's score - ${computerScore}`)
     }
