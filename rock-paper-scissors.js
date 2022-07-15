@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
 //    if playerselection === computerplay
 //        return "Tie"
     if (playerSelection === computerSelection) {
-        return `Draw. You chose ${playerSelection} and the computer chose ${computerSelection}`
+        console.log(`Draw. You chose ${playerSelection} and the computer chose ${computerSelection}`)
 
 //    elif playerselection === "rock"
 //        if computerselection === "paper"
@@ -31,9 +31,11 @@ function playRound(playerSelection, computerSelection) {
 //            return "You win"
     } else if (playerSelection === "ROCK") {
         if (computerSelection === "PAPER") {
-            return `You lose. ${computerSelection} beats ${playerSelection}.`
+            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`)
+            return ++computerScore;
         } else {
-            return `You win. ${playerSelection} beats ${computerSelection}.`
+            console.log(`You win. ${playerSelection} beats ${computerSelection}.`)
+            return ++playerScore;
         }
 
 //    elif playerselection === "paper"
@@ -43,9 +45,11 @@ function playRound(playerSelection, computerSelection) {
 //            return "You lose"
     } else if (playerSelection === "PAPER") {
         if (computerSelection === "ROCK") {
-            return `You win. ${playerSelection} beats ${computerSelection}.`
+            console.log(`You win. ${playerSelection} beats ${computerSelection}.`)
+            return ++playerScore;
         } else {
-            return `You lose. ${computerSelection} beats ${playerSelection}.`
+            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`)
+            return ++computerScore;
         }
 
 //    elif playerselection === "scissor"
@@ -55,28 +59,40 @@ function playRound(playerSelection, computerSelection) {
 //            return "You lose"
     } else if (playerSelection === "SCISSOR") {
         if (computerSelection === "PAPER") {
-            return `You win. ${playerSelection} beats ${computerSelection}.`
+            console.log(`You win. ${playerSelection} beats ${computerSelection}.`)
+            return ++playerScore;
         } else {
-            return `You lose. ${computerSelection} beats ${playerSelection}.`
+            console.log(`You lose. ${computerSelection} beats ${playerSelection}.`)
+            return ++computerScore;
         }
 
 //    else
 //        return "${playerselection} is not a valid choice"
     } else {
-        return `${playerSelection} is not a valid choice.`
+        console.log(`${playerSelection} is not a valid choice.`)
     }
 }
 
 //Create Game() function
 //    for loop - iterate 5 times
 //       playRound()
+//    compare player and computer scores
 
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = playerPlay();
         let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
+        playRound(playerSelection, computerSelection)
+    }
+
+    if (playerScore > computerScore) {
+        console.log(`You win. Your score - ${playerScore} | Computer's score - ${computerScore}`)
+    } else {
+        console.log(`You lose. Your score - ${playerScore} | Computer's score - ${computerScore}`)
     }
 }
+
+let playerScore = 0;
+let computerScore = 0;
 
 game();
