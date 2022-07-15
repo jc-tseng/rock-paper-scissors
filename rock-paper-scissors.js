@@ -1,11 +1,8 @@
-//Array of choices (rock, paper, scissor)
-var choices = [
-    "ROCK", "PAPER", "SCISSOR"
-];
-
 //Create computerPlay() function
-//    return random(rock, paper, or scissor)
+//    Array of choices (rock, paper, scissor)
+//    return random(array)
 function computerPlay() {
+    const choices = ["ROCK", "PAPER", "SCISSOR"];
     return choices[Math.floor(Math.random()*choices.length)]
 }
 
@@ -22,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
 //    if playerselection === computerplay
 //        return "Tie"
     if (playerSelection === computerSelection) {
-        console.log(`Draw. You chose ${playerSelection} and the computer chose ${computerSelection}`)
+        console.log(`Draw. You chose ${playerSelection} and the computer chose ${computerSelection}.`)
 
 //    elif playerselection === "rock"
 //        if computerselection === "paper"
@@ -82,15 +79,16 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = playerPlay();
         let computerSelection = computerPlay();
+//        console.log(computerSelection);   <--- check what the computer is choosing
         playRound(playerSelection, computerSelection)
     }
 
     if (playerScore > computerScore) {
-        console.log(`You win. Your score - ${playerScore} | Computer's score - ${computerScore}`)
+        console.log(`Congrats, you won the game! Your score - ${playerScore} | Computer's score - ${computerScore}`)
     } else if (playerScore < computerScore) {
-        console.log(`You lose. Your score - ${playerScore} | Computer's score - ${computerScore}`)
+        console.log(`Sorry, you lose the game. Your score - ${playerScore} | Computer's score - ${computerScore}`)
     } else {
-        console.log(`Draw. Your score - ${playerScore} | Computer's score - ${computerScore}`)
+        console.log(`Tie game! Your score - ${playerScore} | Computer's score - ${computerScore}`)
     }
 }
 
