@@ -45,21 +45,37 @@ function game() {
     rock.addEventListener('click', () => {
         playRound("ROCK", computerPlay());
         score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+        checkWinner();
     });
 
     const paper = document.querySelector('.paper');
     paper.addEventListener('click', () => {
         playRound("PAPER", computerPlay());
         score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+        checkWinner();
     });
 
     const scissor = document.querySelector('.scissor');
     scissor.addEventListener('click', () => {
         playRound("SCISSOR", computerPlay());
         score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+        checkWinner();
     });
 }
 
+function checkWinner() {
+    if (playerScore === 5) {
+        alert("Congratulations, you beat the computer!")
+        playerScore = 0;
+        computerScore = 0;
+        score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+    } else if (computerScore === 5) {
+        alert("Aw man, the computer beat you!")
+        playerScore = 0;
+        computerScore = 0;
+        score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+    }
+}
 
 const results = document.querySelector('.results');
 const content = document.createElement('div');
