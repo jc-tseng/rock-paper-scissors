@@ -65,12 +65,12 @@ function game() {
 
 function checkWinner() {
     if (playerScore === 5) {
-        alert("Congratulations, you beat the computer!")
+        alert("Congratulations, you beat the computer!");
         playerScore = 0;
         computerScore = 0;
         score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
     } else if (computerScore === 5) {
-        alert("Aw man, the computer beat you!")
+        alert("Aw man, the computer beat you!");
         playerScore = 0;
         computerScore = 0;
         score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
