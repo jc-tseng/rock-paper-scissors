@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
             content.textContent = `You win. You chose ${playerSelection} and the computer chose ${computerSelection}.`;
             return ++playerScore;
         } else {
-            image.src = './imgs/p.png'
+            image.src = './imgs/r.png'
             document.querySelector('.computer').appendChild(image);
             console.log(`LOSE - PLAYER: ${playerSelection} | COMPUTER: ${computerSelection}`)
             content.textContent = `You lose. You chose ${playerSelection} and the computer chose ${computerSelection}.`;
